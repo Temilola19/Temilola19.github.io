@@ -1,0 +1,84 @@
+.auth-container{
+    background-color: black;
+    color: white;
+    height: fit-content;
+    width: fit-content;
+    padding: 70px;
+    margin: 50px auto;
+    border-radius: 30px;
+}
+
+input{
+    width: 400px;
+    margin:10px auto;
+    border-radius: 30px;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+label{
+    color: rgb(238, 238, 238);
+    font-size: 15px;
+}
+
+form{
+    margin-top: 30px;
+}
+
+h3{
+    margin-top: 40px;
+}
+
+.signup-link{
+    color: #01bf71;
+}
+
+.sub{
+    color: rgb(161, 161, 161);
+}
+
+.division{
+    margin-top:15px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+column-gap: 10px;
+
+}
+
+hr{
+    width: 100px;
+    border: 0.05px solid rgb(32, 32, 32);
+    border-radius: 30px;
+}
+
+.division p{
+    color: rgb(129, 129, 129);
+    font-size: 15px;
+}
+
+.google{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 10px;
+    align-items: center;
+justify-content: center;
+    color: black;
+    padding: 5px;
+    border-radius: 30px;
+margin-top: 30px;
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    cursor: pointer;
+}
+
+.google img{
+    width: 20px;
+    height: 20px;
+}
+
+.google p{
+    font-size: 13px;
+}

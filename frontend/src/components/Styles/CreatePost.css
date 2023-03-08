@@ -1,0 +1,80 @@
+.post-container{
+    background-image: url("../images/augustine-wong-li0iC0rjvvg-unsplash.jpg");
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+
+}
+.create-post-con{
+    background-color: black;
+    height: fit-content;
+    width: fit-content;
+color: white;
+    border-radius: 30px;
+    text-align: left;
+    padding: 50px;
+    padding-bottom: 80px;
+    margin: 50px auto;
+}
+
+.post-container{
+    padding: 30px;
+    text-align: center;
+}
+
+.post-container h2{
+    color: #2e2e2e;
+}
+.input{
+    width: 600px;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    border: none;
+}
+
+img{
+    width: 400px;
+}
+
+label p{
+    margin-top: 3px;
+    margin-bottom: -6px;
+    color: rgb(121, 120, 120);
+    font-size: 14px;
+}
+.ql-toolbar.ql-snow {
+    border: none !important;
+   
+}
+
+.ql-container.ql-snow {
+     border: none !important;
+}
+
+.react-tagsinput{
+    width: 600px;
+        height: 30px;
+        border-radius: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        outline: none;
+        border: none;
+}
+
+.react-tagsinput-tag {
+    color: rgb(55, 55, 55) !important;
+    background-color: #1c701a8c !important;
+    border-radius: 30px !important;
+    border: none !important; 
+   
+    display: inline-block !important;
+    font-family: sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    margin-bottom: 5px !important;
+    margin-right: 5px !important;
+    padding: 7px !important;
+}
