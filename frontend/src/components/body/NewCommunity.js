@@ -10,7 +10,7 @@ import "../Styles/Navbar.css";
 import AddIcon from "@mui/icons-material/Add";
 import { useState } from "react";
 
-const NewPosts = () => {
+const NewCommunity = () => {
   // const [open, setOpen] = React.useState(false);
   // const handleOpen = () => setOpen(true);
   // const handleClose = () => setOpen(false);
@@ -20,18 +20,18 @@ const NewPosts = () => {
   //   setTags(value);
   // };
 
-  const [openPostModal, setOpenPostModal] = useState(false);
+  //const [openCommunityModal, setOpenCommunityModal] = useState(false);
   return (
     <div>
       <div className="newPost">
-        {openPostModal && openPostModal && (
-          <PostModal
-            openPostModal={openPostModal}
-            setOpenPostModal={() => setOpenPostModal(false)}
+        {/* {openCommunityModal && openCommunityModal && (
+          <CommunitytModal
+            openCommunityModal={openCommunityModal}
+            setOpenCommunityModal={() => setOpeCommunityModal(false)}
           />
-        )}
+        )} */}
         <Button
-          onClick={() => setOpenPostModal(true)}
+          //onClick={() => setOpenCommunityModal(true)}
           // href="/AddPost"
           variant="contained"
           size="small"
@@ -49,7 +49,7 @@ const NewPosts = () => {
             boxShadow: " 0px 10px 20px rgba(37, 176, 35, 0.2)",
           }}
         >
-          Create Post
+          Create Community
           <AddIcon
             style={{
               width: "15px",
@@ -63,4 +63,4 @@ const NewPosts = () => {
   );
 };
 
-export default NewPosts;
+export default NewCommunity;

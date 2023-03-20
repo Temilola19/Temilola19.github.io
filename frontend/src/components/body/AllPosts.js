@@ -1,49 +1,113 @@
 import { Avatar, IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CommentIcon from "@mui/icons-material/Comment";
 import "../Styles/PostStyle.css";
 import React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
+import ReactHtmlParser from "react-html-parser";
 
-const AllPosts = () => {
+const AllPosts = ({ questionData, question, props }) => {
+  let tags = JSON.parse(question?.tags[0]);
+
+  function truncate(str, n) {
+    return str?.length > n ? str.slice(0, n - 1) + "..." : str;
+  }
+
+  const [isLiked, setIsLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(question?.likes?.length);
+
+  const user = useSelector(selectUser);
+
+  const handleLike = async () => {
+    try {
+      const response = await axios.post("http://localhost/api/likes", {
+        user: user,
+        post: question._id,
+      });
+      setIsLiked(true);
+      setLikeCount(likeCount + 1);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    const checkIfLiked = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost/api/likes/${question._id}/${user?.uid}`
+        );
+        setIsLiked(response.data.isLiked);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    checkIfLiked();
+  }, [question._id, user]);
+
   return (
     <div className="all-posts">
       <div className="all-posts-container">
-        <div className="post-title">
-          Does anyone have links to any good javascript tutorial?
-        </div>
+        <Link
+          style={{ textDecoration: "none", color: "black" }}
+          to={`/ViewQuestion?q=${question?._id}`}
+        >
+          <div className="post-title">{question?.title}</div>
+        </Link>
+
         <div className="post-info">
-          <Avatar style={{ height: "20px", width: "20px" }} />
-          <div className="user-name">@username</div>
-          <div className="time-of-post">time ago</div>
+          <Avatar
+            src={question?.user?.photo}
+            style={{ height: "20px", width: "20px" }}
+          />
+          <div className="user-name">
+            {question?.user?.displayName
+              ? question?.user?.displayName
+              : String(question?.user?.email).split("@")[0]}
+          </div>
+          <div className="time-of-post">
+            {new Date(question?.created_at).toLocaleString()}
+          </div>
         </div>
         <div className="post-body">
-          I just recently started learning javascript and all the resources I’ve
-          come across have all been very overwhelming. Anyone know any good
-          tutorial or resource for absolute beginers?
+          {ReactHtmlParser(truncate(question?.body, 300))}
         </div>
         <div className="post-tags">
-          <div className="post-tag">Javascript</div>
-          <div className="post-tag">web development</div>
+          {tags.map((_tag, index) => (
+            <div key={index} className="post-tag">
+              {_tag}
+            </div>
+          ))}
         </div>
 
         <div className="post-reaction">
           <div className="post-likes">
-            <IconButton>
-              <FavoriteIcon
-                style={{ color: "#afafaf", height: "20px", width: "20px" }}
-              />
+            <IconButton onClick={handleLike}>
+              {isLiked ? (
+                <FavoriteIcon
+                  style={{ height: "20px", width: "20px", color: "red" }}
+                />
+              ) : (
+                <FavoriteIcon
+                  style={{ height: "20px", width: "20px", color: "#afafaf" }}
+                />
+              )}
             </IconButton>
-
-            <p className="likesN">20 Likes</p>
+            <p>{likeCount} likes</p>
           </div>
+
           <div className="post-comments">
             <IconButton>
               <CommentIcon
                 style={{ color: "#afafaf", height: "20px", width: "20px" }}
               />
             </IconButton>
-
-            <p className="commentsN">20 Comments</p>
+            <p>{question?.answerDetails?.length} comments</p>
           </div>
         </div>
       </div>

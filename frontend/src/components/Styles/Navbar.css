@@ -1,5 +1,5 @@
 header{
-    background-color: black;
+    background-color: #000000;
     color: white;
 }
 
@@ -13,8 +13,8 @@ header{
    padding-bottom: 8px;
   
   
-   background-color: black;
-   color: white;
+   background-color: #101010;
+   color: #e9eef2;
 }
 
 .nav-right-container{
@@ -41,6 +41,43 @@ margin-top: 0;
     font-weight: 500;
     color: rgb(191, 191, 191);
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+   width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+     padding: 10px;
+    border-radius: 10px;
+}
+
+.dropdown-content p{
+    color: #101010;
+    cursor: pointer;
+  
+}
+
+.dropdown-content p:hover{
+color: #01bf71;
+}
+
+/* .dropdown-content a:hover {
+    background-color: #ddd;
+} */
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .nav-search-container{
     display: grid;
     column-gap: 10px;
@@ -83,8 +120,8 @@ color: #01bf71;
 }
 
 .body{
-    background-color: #fff;
-    height:300px;
+    background-color: #fafafa;
+    height: fit-content;
     border-radius: 30px;
     margin: 0;
     padding-top: 0;
@@ -158,11 +195,9 @@ height: 70px;
     width: 80px;
 } */
 .newPost{
-    background-color: #fff;
-        
-        border-radius: 30px;
+   text-align: right;
         margin: 0;
-        padding: 30px;
+        padding: 10px;
 }
 .content{
     margin-top: 50px;
@@ -181,7 +216,7 @@ video {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(235, 235, 235);
 }
 .post-grid{
     display: grid;
@@ -206,7 +241,7 @@ video {
 
 .tag{
 background: #25b02325;
-     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.153);
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     color: rgb(61, 61, 61);
     /* border: 0.1px solid rgb(1, 69, 1); */
     border-radius: 30px;
@@ -230,4 +265,72 @@ background: #25b02325;
     justify-content: center;
     align-items: center;
     column-gap: 8px;
+}
+
+.css-1wnsr1i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    border: none !important;
+    border-radius: 30px;
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    padding: 32px;
+}
+
+.community{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.community-con{
+margin-top: 20px;
+    padding-top: 0 !important;
+    padding: 30px;
+    text-align: center;
+}
+
+.name{
+    font-size: 15px;
+  
+    margin-bottom: 3px;
+}
+
+.members{
+   font-size: 12px;
+    color: #7d7d7d;
+    margin-top: 0;
+}
+
+.quest{
+    display: flex;
+        align-items: center;
+        column-gap: 15px;
+        text-align: left;
+        margin-top: 25px;
+}
+
+.quests{
+    margin-top: 20px;
+        padding-top: 0 !important;
+        padding: 30px;
+        text-align: center;
+}
+
+.quest-title{
+    font-size: 15px;
+}
+
+.css-5xe99f-MuiLinearProgress-bar1 {
+    
+ 
+    background-color: #01bf71 !important;
 }

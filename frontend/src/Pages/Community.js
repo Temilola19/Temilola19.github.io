@@ -1,14 +1,13 @@
 import React from "react";
-import CreatePost from "../components/createPost/CreatePost";
+import Community from "../components/body/Communities";
 import Navbar from "../components/NavBar/Navbar";
-
-const AddPost = () => {
+const Communities = () => {
   return (
     <div>
       <Navbar />
-      <CreatePost />
+      <Community />
     </div>
   );
 };
 
-export default AddPost;
+export default Communities;

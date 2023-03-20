@@ -8,10 +8,35 @@ import Body from "./components/body";
 import Navbar from "./components/NavBar/Navbar";
 import Question from "./components/ViewQuestion";
 import { auth } from "./firebase";
-import AddPost from "./Pages/AddPost";
+
 import Home from "./Pages/Home";
 import LogIn from "./Pages/LogIn";
 import Post from "./Pages/Post";
+import Community from "./Pages/Community";
+import Communities from "./Pages/Community";
+
+const PrivateRoute = ({ element: Element, ...rest }) => {
+  const user = useSelector(selectUser);
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        user ? (
+          <Element {...props} />
+        ) : (
+          <Navigate
+            to={{
+              pathname: "/auth",
+              state: {
+                from: props.location,
+              },
+            }}
+          />
+        )
+      }
+    />
+  );
+};
 
 function App() {
   const user = useSelector(selectUser);
@@ -42,40 +67,6 @@ function App() {
             path={user ? "/home" : "/"}
             element={user ? <Home /> : <LogIn />}
           />
-          {/* <Route
-            path="Home"
-            element={
-              user ? (
-                <Home />
-              ) : (
-                <Navigate
-                  to={{
-                    pathname: "/",
-                    state: {
-                      from: "/Home",
-                    },
-                  }}
-                />
-              )
-            }
-          /> */}
-          <Route
-            path="AddPost"
-            element={
-              user ? (
-                <Post />
-              ) : (
-                <Navigate
-                  to={{
-                    pathname: "/",
-                    state: {
-                      from: "/AddPost",
-                    },
-                  }}
-                />
-              )
-            }
-          />
           <Route
             path="ViewQuestion"
             element={
@@ -93,6 +84,7 @@ function App() {
               )
             }
           />
+          <Route exact path="/Community" element={<Communities />} />
         </Routes>
       </BrowserRouter>
     </div>

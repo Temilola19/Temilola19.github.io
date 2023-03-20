@@ -5,38 +5,19 @@ import "../Styles/Navbar.css";
 import AllPosts from "./AllPosts";
 import NewPosts from "./NewPosts";
 import Slideshow from "./Slideshow";
-const BodyCenter = () => {
+const BodyCenter = ({ questions }) => {
   return (
     <div>
       {/* <Slideshow /> */}
       <NewPosts />
       <br /> <br />
       <div className="posts">
-        <div className="post">
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/ViewQuestion"
-          >
-            <AllPosts />
-          </Link>
-          <AllPosts />
-          <AllPosts />
-          <AllPosts />
-          <AllPosts />
-        </div>
+        {questions.map((_q) => (
+          <div key={_q._id} className="post">
+            <AllPosts question={_q} />
+          </div>
+        ))}
       </div>
-      {/* <br /> <br />
-      <br />
-      <div className="body"></div>
-      <br />
-      <br />
-      <div className="body"></div>
-      <br />
-      <br />
-      <div className="body"></div>
-      <br />
-      <br />
-      <div className="body"></div> */}
     </div>
   );
 };

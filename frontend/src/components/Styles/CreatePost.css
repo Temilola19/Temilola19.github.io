@@ -5,16 +5,8 @@
     background-size: cover;
 
 }
-.create-post-con{
-    background-color: black;
-    height: fit-content;
-    width: fit-content;
-color: white;
-    border-radius: 30px;
-    text-align: left;
-    padding: 50px;
-    padding-bottom: 80px;
-    margin: 50px auto;
+.postModal label{
+    color: #000000 !important;
 }
 
 .post-container{
@@ -23,16 +15,18 @@ color: white;
 }
 
 .post-container h2{
-    color: #2e2e2e;
+    color: #444444;
 }
 .input{
     width: 600px;
     height: 30px;
+    background-color: #f1f1f1;
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
     outline: none;
     border: none;
+    margin-top: 0;
 }
 
 img{
@@ -40,10 +34,10 @@ img{
 }
 
 label p{
-    margin-top: 3px;
-    margin-bottom: -6px;
-    color: rgb(121, 120, 120);
-    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    color: rgb(100, 100, 100);
+    font-size: 13px;
 }
 .ql-toolbar.ql-snow {
     border: none !important;
@@ -55,13 +49,14 @@ label p{
 }
 
 .react-tagsinput{
-    width: 600px;
-        height: 30px;
-        border-radius: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
-        outline: none;
-        border: none;
+    width: 600px !important;
+        height: 30px !important;
+        border-radius: 10px !important;
+       
+        padding: 10px !important;
+        background-color: #f1f1f1 !important;
+        outline: none !important;
+        border: none !important;
 }
 
 .react-tagsinput-tag {
@@ -77,4 +72,13 @@ label p{
     margin-bottom: 5px !important;
     margin-right: 5px !important;
     padding: 7px !important;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  
+    text-align: right !important;
+}
+
+form {
+    text-align: left;
 }

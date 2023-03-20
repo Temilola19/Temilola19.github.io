@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { auth } from "../../firebase";
 import { selectUser } from "../../features/userSlice";
+
 // import { signOut } from "firebase/auth";
 const Navbar = () => {
   const user = useSelector(selectUser);
@@ -28,23 +29,37 @@ const Navbar = () => {
             <input type="text" placeholder="Search"></input>
           </div>
         </div>
-        <div
-          onClick={() => {
-            auth.signOut();
-            navigate("/");
-          }}
-          className="nav-right-container"
-        >
-          <Avatar
-            src={user?.photo}
-            style={{
-              height: "20px",
-              width: "20px",
-              marginTop: "0",
-              marginBottom: "0",
-            }}
-          />
-          <p>Sincerelylara</p>
+        <div className="dropdown">
+          <div className="nav-right-container">
+            <Avatar
+              src={user?.photo}
+              style={{
+                height: "20px",
+                width: "20px",
+                marginTop: "0",
+                marginBottom: "0",
+              }}
+            />
+            <p>
+              {" "}
+              {user?.displayName
+                ? user?.displayName
+                : String(user?.email).split("@")[0]}
+            </p>
+          </div>
+          <div className="dropdown-content">
+            <Link style={{ textDecoration: "none" }}>
+              <p>Profile</p>
+            </Link>
+            <p
+              onClick={() => {
+                auth.signOut();
+                navigate("/");
+              }}
+            >
+              Logout
+            </p>
+          </div>
         </div>
       </div>
     </div>

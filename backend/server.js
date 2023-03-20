@@ -2,25 +2,29 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const path = require("path");
+const router = require("./routers");
+const db = require("./db");
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 80;
 
 //db connection
+db.connect();
 
 //middleware
-app.use(bodyparser.json({ limit: "50mb" }));
-app.use(bosyParser.urlencoded({ extended: true, limit: "50mb" }));
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
 app.use(express.json());
 
 //headers
 app.use((req, res, next) => {
-  res.header("Acess-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "*");
   next();
 });
 
 // api
+app.use("/api", router);
 
 //static resources
 
@@ -36,7 +40,13 @@ app.get("*", (req, res) => {
 });
 
 //cors
-app.use(cors());
+
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  })
+);
 
 //server listen
 app.listen(PORT, () => {

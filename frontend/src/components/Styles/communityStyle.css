@@ -1,0 +1,50 @@
+.com-con{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.container{
+    /* background-color: white; */
+    border-radius: 10px;
+    height: fit-content;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.container h1{
+    font-size: 15px;
+    color: #01bf71;
+}
+
+.com-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    height: fit-content;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.com-info{
+display: flex;
+    align-items: start;
+    column-gap: 15px;
+    text-align: left;
+
+}
+
+.description{
+    color: rgb(95, 95, 95);
+    font-size: 13px;
+}
+
+.name{
+    margin-top: 0 !important;
+    color: #01bf71 !important;
+    cursor: pointer;
+   
+}

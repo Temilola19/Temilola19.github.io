@@ -1,14 +1,14 @@
 .all-posts{
-    background-color: white;
+    background-color: #fafafa;
     border-radius: 30px;
     padding: 30px;
     height: fit-content;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .post-title{
     color: #01bf71;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 15px;
 }
 .post-info{
@@ -16,7 +16,7 @@
     grid-template-columns: auto auto auto;
     justify-content: left;
     column-gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     align-items: center;
     font-size: 12px;
 }
@@ -35,8 +35,10 @@
 }
 
 .post-body{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     margin-left: 15px;
+    word-wrap: break-word;
+     
 }
 .post-tags{
     display: flex;
@@ -57,7 +59,7 @@ padding-top: 5px;
 padding-bottom: 5px;
 padding-right: 10px;
 font-size: 10px;
-margin-bottom: 20px;
+margin-bottom: 30px;
 }
 
 .post-reaction{
