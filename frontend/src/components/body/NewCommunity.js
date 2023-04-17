@@ -9,29 +9,30 @@ import "react-tagsinput/react-tagsinput.css";
 import "../Styles/Navbar.css";
 import AddIcon from "@mui/icons-material/Add";
 import { useState } from "react";
+import NewCommunityModal from "./NewCommunityModal";
 
 const NewCommunity = () => {
   // const [open, setOpen] = React.useState(false);
   // const handleOpen = () => setOpen(true);
   // const handleClose = () => setOpen(false);
-  // const [tags, setTags] = useState([]);
+  // // const [tags, setTags] = useState([]);
 
-  // const handleChange = (value) => {
-  //   setTags(value);
-  // };
+  // // const handleChange = (value) => {
+  // //   setTags(value);
+  // // };
 
-  //const [openCommunityModal, setOpenCommunityModal] = useState(false);
+  const [openNewCommunityModal, setOpenNewCommunityModal] = useState(false);
   return (
     <div>
       <div className="newPost">
-        {/* {openCommunityModal && openCommunityModal && (
-          <CommunitytModal
-            openCommunityModal={openCommunityModal}
-            setOpenCommunityModal={() => setOpeCommunityModal(false)}
+        {openNewCommunityModal && openNewCommunityModal && (
+          <NewCommunityModal
+            openNewCommunityModal={openNewCommunityModal}
+            setOpenNewCommunityModal={() => setOpenNewCommunityModal(false)}
           />
-        )} */}
+        )}
         <Button
-          //onClick={() => setOpenCommunityModal(true)}
+          onClick={() => setOpenNewCommunityModal(true)}
           // href="/AddPost"
           variant="contained"
           size="small"

@@ -185,4 +185,18 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.get("/user/:userId", async (req, res) => {
+  try {
+    const questions = await QuestionDB.find({
+      user: req.params.user,
+    });
+    res.status(200).send(questions);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({
+      message: "user not found",
+    });
+  }
+});
+
 module.exports = router;

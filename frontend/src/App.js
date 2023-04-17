@@ -14,6 +14,10 @@ import LogIn from "./Pages/LogIn";
 import Post from "./Pages/Post";
 import Community from "./Pages/Community";
 import Communities from "./Pages/Community";
+import ViewCommunity from "./components/body/ViewCommunity/ViewCommunity";
+import OpenCommunity from "./components/body/ViewCommunity/OpenCommunity";
+import ProfilePage from "./Pages/ProfilePage";
+import LandingPage from "./Pages/LandingPage";
 
 const PrivateRoute = ({ element: Element, ...rest }) => {
   const user = useSelector(selectUser);
@@ -63,8 +67,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route exact path="/" element={<LandingPage />} />
           <Route
-            path={user ? "/home" : "/"}
+            path={user ? "/home" : "/auth"}
             element={user ? <Home /> : <LogIn />}
           />
           <Route
@@ -75,7 +80,7 @@ function App() {
               ) : (
                 <Navigate
                   to={{
-                    pathname: "/",
+                    pathname: "/auth",
                     state: {
                       from: "/ViewQuestion",
                     },
@@ -85,6 +90,9 @@ function App() {
             }
           />
           <Route exact path="/Community" element={<Communities />} />
+          <Route exact path="/ViewCommunity" element={<ViewCommunity />} />
+          <Route exact path="/OpenCommunity" element={<OpenCommunity />} />
+          <Route exact path="/ProfilePage" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
     </div>

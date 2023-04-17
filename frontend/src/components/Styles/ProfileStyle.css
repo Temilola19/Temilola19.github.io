@@ -1,0 +1,28 @@
+.banner{
+    background-color: #3f3f3f;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.user{
+    text-align: center;
+    color: white;
+    padding-top: 12px;
+    font-size: 12px;
+}
+
+.profile-grid{
+    margin-top: 50px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+   align-items: start;
+    padding-left: 10px;
+    padding-right: 10px;
+    column-gap: 1px;
+}
+
+.about-me p{
+    color:#000000;
+    font-size: 15px;
+}

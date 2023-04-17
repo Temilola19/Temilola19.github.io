@@ -78,7 +78,7 @@ const Auth = () => {
         {signup ? (
           <>
             <p className="logo">
-              tech<span className="special">Space</span>
+              my<span className="special">Space</span>
             </p>
             <h3>Sign Up</h3>
             <p className="sub">
@@ -163,7 +163,7 @@ const Auth = () => {
         ) : (
           <>
             <p className="logo">
-              tech<span className="special">Space</span>
+              my<span className="special">Space</span>
             </p>
             <h3>Log In</h3>
             <p className="sub">

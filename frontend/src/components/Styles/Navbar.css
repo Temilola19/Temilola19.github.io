@@ -8,7 +8,7 @@ header{
     grid-template-columns: auto auto auto;
     justify-content: space-between;
     align-items: center;
-    
+    margin:0 auto;
    padding-top: 8px;
    padding-bottom: 8px;
   
@@ -18,6 +18,30 @@ header{
 }
 
 .nav-right-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.streaks{
+  border: 1px solid #FF7043;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.css-11pbyhm-MuiSvgIcon-root {
+    color: #FF7043 !important;
+}
+
+.css-pwyk3z-MuiBadge-badge {
+    
+   
+    background-color: #01bf71 !important;
+    
+}
+
+.profile{
     display: grid;
     grid-template-columns: auto auto ;
         justify-content: space-between;
@@ -34,7 +58,7 @@ header{
        
 }
 
-.nav-right-container p{
+.profile p{
 margin-top: 0;
     margin-bottom: 0;
     font-size: 12px;
@@ -81,10 +105,12 @@ color: #01bf71;
 .nav-search-container{
     display: grid;
     column-gap: 10px;
+  margin-left: 250px;
         grid-template-columns: auto auto;
         justify-content: space-between;
         align-items: center;
         position: relative;
+   
        
 }
 .nav-search-container input{
@@ -299,7 +325,7 @@ margin-top: 20px;
 }
 
 .name{
-    font-size: 15px;
+    font-size: 13px;
   
     margin-bottom: 3px;
 }
@@ -326,7 +352,7 @@ margin-top: 20px;
 }
 
 .quest-title{
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .css-5xe99f-MuiLinearProgress-bar1 {
@@ -334,3 +360,14 @@ margin-top: 20px;
  
     background-color: #01bf71 !important;
 }
+
+.navp:hover{
+   color: #01bf71;
+   cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+

@@ -81,11 +81,11 @@ const BodyLeft = () => {
         </div>
       </div>
       <br /> <br />
-      <div className="body">
+      {/* <div className="body">
         <div className="cardA-title">
           <h1>Activity</h1>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

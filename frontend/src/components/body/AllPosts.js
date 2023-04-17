@@ -1,4 +1,4 @@
-import { Avatar, IconButton } from "@mui/material";
+import { Avatar, IconButton, Tooltip } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CommentIcon from "@mui/icons-material/Comment";
@@ -10,8 +10,20 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
 import ReactHtmlParser from "react-html-parser";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import FlagIcon from "@mui/icons-material/Flag";
 
 const AllPosts = ({ questionData, question, props }) => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   let tags = JSON.parse(question?.tags[0]);
 
   function truncate(str, n) {
@@ -53,6 +65,22 @@ const AllPosts = ({ questionData, question, props }) => {
   return (
     <div className="all-posts">
       <div className="all-posts-container">
+        <Tooltip title="Flag Post" arrow>
+          <IconButton
+            style={{
+              float: "right",
+            }}
+            id="long-button"
+          >
+            <FlagIcon
+              style={{
+                color: "#afafaf",
+                height: "20px",
+              }}
+            />
+          </IconButton>
+        </Tooltip>
+
         <Link
           style={{ textDecoration: "none", color: "black" }}
           to={`/ViewQuestion?q=${question?._id}`}

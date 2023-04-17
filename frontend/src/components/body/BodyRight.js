@@ -30,7 +30,11 @@ const BodyRight = () => {
         <div className="quests">
           <div className="quest">
             <Avatar
-              style={{ backgroundColor: "#f1f1f1", color: "#d4af37" }}
+              style={{
+                border: "1px solid #d4af37",
+                color: "#d4af37",
+                backgroundColor: "#fafafa",
+              }}
               variant="rounded"
             >
               <EmojiEventsIcon />
@@ -47,20 +51,24 @@ const BodyRight = () => {
                     marginTop: "5px",
                   }}
                   variant="determinate"
-                  value={50}
+                  value={0}
                 />
               </div>
             </div>
           </div>
           <div className="quest">
             <Avatar
-              style={{ backgroundColor: "#f1f1f1", color: "#d4af37" }}
+              style={{
+                border: "1px solid #d4af37",
+                color: "#d4af37",
+                backgroundColor: "#fafafa",
+              }}
               variant="rounded"
             >
               <EmojiEventsIcon />
             </Avatar>
             <div className="quest-info">
-              <div className="quest-title">Make a post</div>
+              <div className="quest-title">Join a Community</div>
               <div className="quest-progress">
                 <LinearProgress
                   style={{
@@ -71,20 +79,24 @@ const BodyRight = () => {
                     marginTop: "5px",
                   }}
                   variant="determinate"
-                  value={50}
+                  value={0}
                 />
               </div>
             </div>
           </div>
           <div className="quest">
             <Avatar
-              style={{ backgroundColor: "#f1f1f1", color: "#d4af37" }}
+              style={{
+                border: "1px solid #d4af37",
+                color: "#d4af37",
+                backgroundColor: "#fafafa",
+              }}
               variant="rounded"
             >
               <EmojiEventsIcon />
             </Avatar>
             <div className="quest-info">
-              <div className="quest-title">Make a post</div>
+              <div className="quest-title">Post a comment</div>
               <div className="quest-progress">
                 <LinearProgress
                   style={{
@@ -95,7 +107,7 @@ const BodyRight = () => {
                     marginTop: "5px",
                   }}
                   variant="determinate"
-                  value={50}
+                  value={0}
                 />
               </div>
             </div>
